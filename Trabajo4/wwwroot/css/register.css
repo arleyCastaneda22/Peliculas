@@ -1,0 +1,14 @@
+﻿.color {
+    color: #fe4141;
+}
+
+.fondo {
+    background: none;
+    border: 1px solid #fe4141;
+}
+
+
+    .fondo:focus {
+        border: 1px solid #fe4141;
+        background: none;
+    }

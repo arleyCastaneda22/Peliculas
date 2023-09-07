@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Trabajo4.Models.Pelicula>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<link href="~/css/card.css" rel="stylesheet" />
+
+@foreach (var item in Model)
+{
+    <div class="card">
+
+        <img src="@Html.DisplayFor(modelItem => item.Url)" class="card-image">
+        <div class="contenido-inicial">
+            <h2 class="titulo">@Html.DisplayFor(modelItem => item.Titulo)</h2>
+        </div>
+        <ul class="lista">
+            <li class="li">Director: @Html.DisplayFor(modelItem => item.Director)</li>
+            <li class="li">Genero: @Html.DisplayFor(modelItem => item.Genero)</li>
+            <li class="li">Calificacion: @Html.DisplayFor(modelItem => item.Cantidad)</li>
+
+        </ul>
+        <p class="sipnosis">Sipnosis: @Html.DisplayFor(modelItem => item.Sipnosis)</p>
+        <div class="card-body botones">
+          
+            <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+        </div>
+    </div>
+}
